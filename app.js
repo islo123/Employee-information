@@ -9,7 +9,7 @@ require('dotenv').config()
 // Middleware
 // app.use(express.static("./public"))
 app.use(express.json())
-app.use(cors()) // Pitä olla security syyistä...frontendin tule error jos ei ole tämä
+app.use(cors({credentials: true, origin: 'https://employee-information1234.netlify.app/', 'methods': 'GET,PUT,PATCH,POST,DELETE'})) // Pitä olla security syyistä...frontendin tule error jos ei ole tämä
 
 //Routes
 app.use("/employee", employee)
